@@ -1,46 +1,38 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-import GoogleBooks from "../api/GoogleBooks";
+import React from 'react'
+import './App.css'
+import UseApi from './api/UseApi'
 
-function App() {
-  const [codeBar, setCodeBar] = useState("");
-  const { getBooks, books } = GoogleBooks(codeBar);
-  // const mydata = Myapi(codeBar);
+export default function UseApp() {
+  const [isbn, setIsbn] = React.useState()
+  const onChange = (e) => {
+    setIsbn(e.target.value)
+  }
 
-  useEffect(() => {
-    getBooks();
-  }, []);
-
-  console.log(books)
   return (
-    <div className="App">
-      {/* <Myapi query={codeBar}  */}
-      <h1>
-        <strong>le stockage des livre de la biblio de jfn </strong>
-      </h1>
-
-      <div className="searchBar">
+    <div className='App'>
+      <h1>andy vas reussir ca !!!!!!!!!!!</h1>
+      <header className='searchBar'>
         <input
-          type="text"
-          placeholder="entrer le code-bar du livre"
-          value={codeBar}
-          onChange={(e) => setCodeBar(e.target.value)}
-        />
-        <button className="bouton1" onClick={() => setCodeBar("")}>
-          Chercher
-        </button>
-      </div>
-      <br />
-      <br />
-      <br />
-      <div className="livre">
-        <div className="image">
-          <img src="/" alt="image du livre" />
-        </div>
-        <button className="bouton2"> Ajouter</button>
-      </div>
+            type="text"
+            value={isbn}
+            onChange={onChange}
+            placeholder="enter your is isbn"
+      />
+      <button className='bouton1' > Search </button>
+      </header>
+      <section >
+        <table>
+          <tr>
+            <th>Isbn</th>
+            <th>titre</th>
+            <th>dsds</th>
+            <th>dsfsf</th>
+            <th>sfaf</th>
+            <th>dscsac</th>
+            <th>fbdn</th>
+          </tr>
+        </table>
+      </section>
     </div>
-  );
+  )
 }
-
-export default App;

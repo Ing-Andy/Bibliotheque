@@ -66,3 +66,25 @@ input{
     color: rgb(255, 255, 0);
     border: none;
 }
+section{
+    width: 100%;
+    /* background-color: aliceblue; */
+    color: blue;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th{
+    border: 1px solid #ff0000;
+    padding: 10px 0px;
+    width: 100%;
+}
+tr{
+    display: flex;
+    justify-content: center;
+}
